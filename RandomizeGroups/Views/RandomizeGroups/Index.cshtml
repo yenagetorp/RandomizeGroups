@@ -1,0 +1,66 @@
+﻿
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model RandomizeGroups.Models.ViewModels.RandomizeGroupsIndexVM
+
+@{
+    ViewData["Title"] = "Index";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title> </title>
+    <link rel="stylesheet" href="https://bootswatch.com/4/slate/bootstrap.css">
+
+</head>
+<body>
+    <form asp-controller="" asp-action="" method="get">
+        @foreach (var item in Model.ChosenEmployees)
+        {
+            <input type="checkbox"
+                   name="@nameof(Model.SelectedEmployees)"
+                   value="@item.Value"
+                   id="Employee_@item.Value" />
+            <label for="Employee_@item.Value">@item.Text</label>
+
+
+        }
+        <label asp-for="Num_Groups">Number of Groups</label>
+        <input asp-for="Num_Groups" name="num_groups" /> @*type="number" min="1" max="50"*@
+        <input type="submit" value="Randomize" />
+
+
+        @* <input type="submit" value="Select" />*@
+    </form>
+    @*<div>
+        <ul>
+            @foreach (var item in Model.NewEmployeesList)
+            {
+                <li>@item</li>
+            }
+        </ul>
+    </div>*@
+
+  
+
+    <div class="card mb-3">
+        <h3 class="card-header">Group </h3>
+        <ul class="list-group list-group-flush">
+            @for (int i = 0; i < Model.employees.Count; i++)
+            {
+                <li>
+                    <h3>Group @(i + 1)</h3>
+                    <ul>
+                        @foreach (var employee in Model.employees[i])
+                        {
+                            <li>@employee</li>
+                        }
+                    </ul>
+                </li>
+            }
+
+        </ul>
+    </div>
+
+</body>
+</html>
+
