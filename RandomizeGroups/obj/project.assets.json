@@ -12949,11 +12949,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\xyagetorp\\Desktop\\(TEST)RandomizeGroups\\RandomizeGroups\\RandomizeGroups.csproj",
+      "projectUniqueName": "C:\\Users\\xyagetorp\\UsefulOldProjects\\RandomizeGroupsFullVersion\\RandomizeGroups\\RandomizeGroups.csproj",
       "projectName": "RandomizeGroups",
-      "projectPath": "C:\\Users\\xyagetorp\\Desktop\\(TEST)RandomizeGroups\\RandomizeGroups\\RandomizeGroups.csproj",
+      "projectPath": "C:\\Users\\xyagetorp\\UsefulOldProjects\\RandomizeGroupsFullVersion\\RandomizeGroups\\RandomizeGroups.csproj",
       "packagesPath": "C:\\Users\\xyagetorp\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\xyagetorp\\Desktop\\(TEST)RandomizeGroups\\RandomizeGroups\\obj\\",
+      "outputPath": "C:\\Users\\xyagetorp\\UsefulOldProjects\\RandomizeGroupsFullVersion\\RandomizeGroups\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

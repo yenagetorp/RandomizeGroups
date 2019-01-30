@@ -14,52 +14,81 @@
 </head>
 <body>
     <form asp-controller="" asp-action="" method="get">
-        @foreach (var item in Model.ChosenEmployees)
-        {
-            <input type="checkbox"
-                   name="@nameof(Model.SelectedEmployees)"
-                   value="@item.Value"
-                   id="Employee_@item.Value" />
-            <label for="Employee_@item.Value">@item.Text</label>
-
-
-        }
-        <label asp-for="Num_Groups">Number of Groups</label>
-        <input asp-for="Num_Groups" name="num_groups" /> @*type="number" min="1" max="50"*@
-        <input type="submit" value="Randomize" />
-
-
+        <fieldset class="form-group">
+            <legend>Checkboxes</legend>
+            @foreach (var item in Model.ChosenEmployees)
+            {
+                @*<input type="checkbox"
+                           name="@nameof(Model.SelectedEmployees)"
+                           value="@item.Value"
+                           id="Employee_@item.Value" />
+                    <label for="Employee_@item.Value">@item.Text</label>*@
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox"
+                           name="@nameof(Model.SelectedEmployees)"
+                           value="@item.Value"
+                           id="Employee_@item.Value" checked="" />
+                    <label class="form-check-label" for="Employee_@item.Value">@item.Text</label>
+                </div>
+            }
+            <br />
+            <div class="form-group">
+                <label asp-for="Num_Groups">Number of people in one Group:</label>
+                <input class="form-control" asp-for="Num_Groups" name="num_groups" placeholder="please enter a number" /> @*type="number" min="1" max="50"*@
+            </div>
+            <button type="submit" class="btn btn-primary">Randomize</button>
+        </fieldset>
+        @*<input type="submit" value="Randomize" />*@
         @* <input type="submit" value="Select" />*@
     </form>
     @*<div>
-        <ul>
-            @foreach (var item in Model.NewEmployeesList)
-            {
-                <li>@item</li>
-            }
-        </ul>
-    </div>*@
+            <ul>
+                @foreach (var item in Model.NewEmployeesList)
+                {
+                    <li>@item</li>
+                }
+            </ul>
+        </div>*@
 
-  
+    <div class="container">
+        <div class="row">
 
-    <div class="card mb-3">
-        <h3 class="card-header">Group </h3>
-        <ul class="list-group list-group-flush">
             @for (int i = 0; i < Model.employees.Count; i++)
             {
-                <li>
-                    <h3>Group @(i + 1)</h3>
-                    <ul>
-                        @foreach (var employee in Model.employees[i])
-                        {
-                            <li>@employee</li>
-                        }
-                    </ul>
-                </li>
+                <div class="col-lg-3 col-mg-4 col-sm-6 col-xs-12">
+                    <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+                        <h5 class="card-header">Group @(i + 1)</h5>
+                        <ul>
+                            @foreach (var employee in Model.employees[i])
+                            {
+                                <li>@employee</li>
+                            }
+                        </ul>
+                    </div>
+                </div>
             }
+        </div>
 
-        </ul>
     </div>
+
+    @*<div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+            <h3 class="card-header">Group </h3>
+            <ul class="list-group list-group-flush">
+                @for (int i = 0; i < Model.employees.Count; i++)
+                {
+                    <li>
+                        <h3>Group @(i + 1)</h3>
+                        <ul>
+                            @foreach (var employee in Model.employees[i])
+                            {
+                                <li>@employee</li>
+                            }
+                        </ul>
+                    </li>
+                }
+
+            </ul>
+        </div>*@
 
 </body>
 </html>

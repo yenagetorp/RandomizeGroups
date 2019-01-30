@@ -12,7 +12,6 @@ namespace RandomizeGroups.Models.ViewModels
         public List<SelectListItem> ChosenEmployees { get; set; }
         public List<string> SelectedEmployees { get; set; }
         public List<List<string>> employees { get; set; }
-
         public string Num_Groups { get; set; }
 
         //public SelectedEmployeesVM ChosenEmployeesVM { get; set; }
